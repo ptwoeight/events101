@@ -61,11 +61,6 @@ function idValidationAttacher() {
     const newid = document.querySelector('#newid');
 
     newid.addEventListener('input', function(userInput) {
-        if (userInput.target.value.includes(' ')) {
-            userInput.target.classList.add('invalid');
-        }
-        else {
-            userInput.target.classList.remove('invalid')
-        }
-    })
+        userInput.target.classList.toggle('invalid', userInput.target.value.includes(' '));
+    });
 }
